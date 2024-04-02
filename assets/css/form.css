@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 30px;
+    margin-top: 10vw;
+}
+form h1 {
+    margin: 5px 0px 5px 16vw;
+}
+
+form label {
+    margin: 5px;
+}
+
+form input {
+    margin: 5px;
+}
+
+button {
+    margin: 5px 0px 5px 30px;
+    color: white;
+    background-color: black;
+    width: 46vw;
+}
+
+form #content {
+    height: 60px;
+}

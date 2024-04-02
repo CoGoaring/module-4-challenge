@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+
+}
+
+header {
+    display: flex;
+    flex-direction: inline;
+    flex-wrap: wrap;
+    padding: 30px;
+    border: 4px solid black;
+    justify-content: space-between;
+}
+
+header nav {
+    display: flex;
+    flex-direction: inline;
+    flex-wrap: wrap;
+    text-align: right;
+}
+
+header button {
+    margin-right: 15px;
+}
+main {
+    border: 4px solid black;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 30px;
+    border: 4px solid black;
+}
