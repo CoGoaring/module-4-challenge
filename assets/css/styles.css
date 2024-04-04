@@ -1,12 +1,21 @@
+:root {
+    --backgroundMode: white;
+    --textMode: black;
+    --borderMode: black;
+}
+
 *{
     margin: 0;
+}
 
+:not(.left h1):not(button) {
+    background-color: var(--backgroundMode);
 }
 
 header {
     padding: 30px;
     text-align: right;
-    border: 4px solid black;
+    border: 4px solid var(--borderMode);
 }
 
 header span:hover {
@@ -27,13 +36,14 @@ main {
     height:42vw;
     width: 49vw;
     margin-bottom: 6vw;
-    border: 4px solid black;
+    border: 4px solid var(--borderMode);
+    background-color: var(--backgroundMode);
 }
 .right {
     height:42vw;
     width: 49vw;
     margin-bottom: 6vw;
-    border: 4px solid black;
+    border: 4px solid var(--borderMode);
     /* align-items: center;
     justify-content: center; */
 }
@@ -42,7 +52,7 @@ main {
     position:relative;
     top: 170px;
     font-size: 50px;
-    color:white;
+    color: var(--backgroundMode);
 }
 
 .circle {
@@ -52,4 +62,5 @@ main {
     border-radius: 200px;
     background-image: linear-gradient(rgb(255, 196, 0), rgb(128, 94, 1));
     text-align: center;
+    background-color: var(--backgroundMode);
 }

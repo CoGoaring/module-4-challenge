@@ -1,3 +1,9 @@
+:root {
+    --backgroundMode: white;
+    --textMode: black;
+    --borderMode: black;
+}
+
 *{
     margin: 0;
 
@@ -9,6 +15,7 @@ form {
     flex-wrap: wrap;
     margin: 30px;
     margin-top: 10vw;
+    color: var(--textMode);
 }
 form h1 {
     margin: 5px 0px 5px 16vw;
@@ -20,15 +27,17 @@ form label {
 
 form input {
     margin: 5px;
+    color: var(--textMode);
 }
 
 button {
     margin: 5px 0px 5px 0px;
-    color: white;
-    background-color: black;
+    color: var(--backgroundMode);
+    background-color: var(--textMode);
     width: 46vw;
 }
 
 form #content {
     height: 60px;
+    color: var(--textMode);
 }
