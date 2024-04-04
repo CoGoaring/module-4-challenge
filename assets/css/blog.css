@@ -25,6 +25,13 @@ header button {
 main {
     border: 4px solid black;
 }
+
+main section {
+    width: 100vw;
+    border: 4px solid black;
+
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -32,3 +39,4 @@ footer {
     padding: 30px;
     border: 4px solid black;
 }
+

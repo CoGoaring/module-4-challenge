@@ -1,23 +1,36 @@
-const userName = document.getElementById(`#userName`);
-const title = document.getElementById(`#title`);
-const content = document.getElementById(`#content`);
-const form = {
-    userName: "",
-    title: "",
-    content: ""
-};
+const buttonEl = document.querySelector(`#formButton`);
 
-function formSubmit (event) {
+console.log(`hello`);
+
+
+// handle form submissions
+const formSubmit = function (event) {
     event.preventDefault();
-    // form.userName = userName;
-    // form.title = title;
-    // form.content = content;
-    localStorage.setItem("username", JSON.stringify(userName.value));
-    localStorage.setItem("title", JSON.stringify(title.value));
-    localStorage.setItem("content", JSON.stringify(content.value));
+
+    console.log(`hellow`);
+    // create form values
+    const form = {
+        userName: document.querySelector(`#userName`).value.trim(),
+        title: document.querySelector(`#title`).value.trim(),
+        content: document.querySelector(`#content`).value.trim()
+    };
+    let check = false;
+    if (form.userName === "" ||
+        form.title === "" ||
+        form.content === "") {
+        console.log("need to fill out your post!")
+    } else {
+        check = true;
+    }
+
+    localStorage.setItem("username", JSON.stringify(form.userName));
+    localStorage.setItem("title", JSON.stringify(form.title));
+    localStorage.setItem("content", JSON.stringify(form.content));
+
+    if (check) {
+        window.location.href="./blog.html";
+    }
 }
 
-// function movePages (event) {
-//     event.preventDefault();
-//     location.href = "./blog.html";
-// }
+
+document.querySelector(`#form1`).addEventListener(`submit`, formSubmit);
