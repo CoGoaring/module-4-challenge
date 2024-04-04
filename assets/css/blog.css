@@ -1,3 +1,8 @@
+:root {
+    --lightMode: white;
+    --darkMode: black;
+}
+
 *{
     margin: 0;
 
@@ -12,6 +17,11 @@ header {
     justify-content: space-between;
 }
 
+header span:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
 header nav {
     display: flex;
     flex-direction: inline;
@@ -22,14 +32,39 @@ header nav {
 header button {
     margin-right: 15px;
 }
+
 main {
-    border: 4px solid black;
+
 }
 
 main section {
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 98.5vw;
     border: 4px solid black;
+    border-radius: 7px;
+    margin: 5px 5px;
+    padding: 10px;
 
+}
+
+main section h3 {
+    font-size: 26px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+main section p {
+    font-size: 20px;
+    font-style: italic;
+    position: relative;
+    left: 2vw;
+    margin: 10px 0px;
+}
+
+main section h4 {
+    
 }
 
 footer {

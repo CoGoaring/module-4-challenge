@@ -4,36 +4,38 @@ const mainEl = document.querySelector(`main`);
 const username = JSON.parse(localStorage.getItem("username"));
 const title = JSON.parse(localStorage.getItem("title"));
 const content = JSON.parse(localStorage.getItem("content"));
+// returns empty array if null
+const namesArray = JSON.parse(localStorage.getItem('usernames') || "[]");
+const titlesArray = JSON.parse(localStorage.getItem('titles')  || "[]");
+const contentsArray = JSON.parse(localStorage.getItem('contents')  || "[]");
 
-// const blogs = [];
 const usernames = [];
 const titles = [];
 const contents = [];
 
 const getSavedBlogs = function() {
-    // only need to check one since blogs cant be posted unless all values are filled
-    if (localStorage.getItem('usernames') !== null) {
-        usernames.push(JSON.parse(localStorage.getItem('usernames')));
-        titles.push(JSON.parse(localStorage.getItem('titles')));
-        contents.push(JSON.parse(localStorage.getItem('contents')));
-    } else {/*Do Nothing*/}
-    usernames.push(username);
-    titles.push(title);
-    contents.push(content);
+    namesArray.push(username);
+    titlesArray.push(title);
+    contentsArray.push(content);
+
+    usernames.push(namesArray);
+    titles.push(titlesArray);
+    contents.push(contentsArray);
+
 }
 
 // create blog post with data 
 const renderBlogs = function () {
     // only need to check one since blogs cant be posted unless all values are filled
-    for (let i=0; i<usernames.length; i++) {
+    for (let i=0; i<namesArray.length; i++) {
         const blogSection = document.createElement("section");
         const blogTitle = document.createElement("h3");
         const blogContent = document.createElement("p");
-        const blogUsername = document.createElement("p");
+        const blogUsername = document.createElement("h4");
 
-        blogTitle.textContent = titles[i];
-        blogContent.textContent = contents[i];
-        blogUsername.textContent = usernames[i];
+        blogTitle.textContent = titlesArray[i];
+        blogContent.textContent = contentsArray[i];
+        blogUsername.textContent = `Posted by: ${namesArray[i]}`;
 
         blogSection.appendChild(blogTitle);
         blogSection.appendChild(blogContent);
@@ -43,13 +45,14 @@ const renderBlogs = function () {
             
         mainEl.appendChild(blogSection);
     }
-    // mainEl.appendChild(blogSection);
 }
 
 const saveBlogs = function () {
-    localStorage.setItem('usernames', JSON.stringify(usernames));
-    localStorage.setItem('titles', JSON.stringify(titles));
-    localStorage.setItem('contents', JSON.stringify(contents));
+    for (let i=0; i<usernames.length; i++) {
+        localStorage.setItem('usernames', JSON.stringify(namesArray));
+        localStorage.setItem('titles', JSON.stringify(titlesArray));
+        localStorage.setItem('contents', JSON.stringify(contentsArray));
+    }
 }
 
 getSavedBlogs();
